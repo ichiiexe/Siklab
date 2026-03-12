@@ -7,41 +7,38 @@ const Navbar = () => {
   const { token, currUser, logout } = useAuth();
 
   return (
-    <nav className="flex justify-center items-center text-black shadow-2xs sticky top-0 left-0 w-full bg-transparent backdrop-blur-sm">
+    <nav className="sticky top-0 left-0 w-full flex items-center justify-center text-black shadow-2xs bg-transparent backdrop-blur-sm">
       <div className="flex justify-between items-center w-full max-w-400">
-        <div className="flex items-center justify-center">
+        <Link to="/" className="flex items-center">
           <h1 className="text-4xl">siklab</h1>
           <img src={logo} alt="FiloJobHunt Logo" className="h-16 w-16" />
-        </div>
+        </Link>
         <ul className="flex space-x-8 opacity-60 font-light">
           <li>
-            <a href="/">Find Jobs</a>
+            <Link to="/jobs">Find Jobs</Link>
           </li>
           <li>
-            <a href="/jobs">Post a Job</a>
+            <Link to="/post-job">Post a Job</Link>
           </li>
           <li>
-            <a href="/companies">Find Candidates</a>
+            <Link to="/companies">Find Candidates</Link>
           </li>
         </ul>
-        {token ? (
+        {currUser ? (
           <div className="flex space-x-4">
-            <button className=" hover:text-gray-300 cursor-pointer">
+            <button className="hover:text-gray-300">
               {currUser?.fullname}
             </button>
             <button onClick={logout}>Logout</button>
           </div>
         ) : (
-          <div className="flex space-x-4">
-            <button
-              href="/login"
-              className=" hover:text-gray-300 cursor-pointer"
-            >
+          <div className="flex items-center space-x-4">
+            <Link to="/login" className="hover:text-gray-300">
               Sign In
-            </button>
+            </Link>
             <Link
               to="/register"
-              className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-2xl cursor-pointer"
+              className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-2xl"
             >
               Get Started
             </Link>

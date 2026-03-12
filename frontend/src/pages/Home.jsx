@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div className="home-container x-auto">
-      <main className="py-10 flex items-center justify-center flex-col text-center gap-8 ">
-        <p className="bg-amber-200 py-2 px-4 rounded-4xl">
+    <div className="home-container mx-auto">
+      <main className="py-10 flex flex-col items-center justify-center text-center gap-8">
+        <p className="bg-amber-200 py-2 px-4 rounded-full">
           The #1 Job Portal for Filipinos
         </p>
         <h1 className="text-6xl font-bold">
@@ -21,7 +21,7 @@ const Home = () => {
           career journey now!
         </p>
 
-        <div className="w-full flex justify-center flex-col items-center">
+        <div className="w-full flex flex-col items-center justify-center">
           <SearchBar />
           <div className="flex flex-wrap justify-center gap-3 mt-6 text-md">
             <span>Popular:</span>

@@ -2,7 +2,7 @@ import { Search, MapPin } from "lucide-react";
 
 const SearchBar = ({ searchTerm, setSearchTerm }) => {
   return (
-    <form className="flex items-center justify-between border w-full max-w-200 border-black/10 rounded-2xl py-2 px-4 bg-white">
+    <form className="flex items-center justify-between w-full max-w-200 border border-black/10 rounded-2xl py-2 px-4 bg-white shadow-xl">
       <div className="flex items-center gap-2 flex-1">
         <Search className="text-black/50" />
         <input

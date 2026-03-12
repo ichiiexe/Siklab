@@ -48,8 +48,8 @@ const Register = () => {
   };
 
   return (
-    <div className="h-dvh w-full bg-red-500 flex flex-col justify-center items-center gap-10">
-      <div className="w-full relative max-w-4xl mx-auto bg-white p-8 rounded shadow flex flex-col justify-center items-center gap-6">
+    <div className="flex h-dvh bg-red-500 flex-col justify-center items-center gap-10 w-full">
+      <div className="relative max-w-4xl mx-auto bg-white p-8 rounded shadow flex flex-col items-center gap-6 w-full">
         <div className="text-center">
           <h1>Create an Account</h1>
           <p>Create an account to apply for jobs or post a job.</p>
@@ -59,7 +59,7 @@ const Register = () => {
             !form.role ? (
               <>
                 <button
-                  className="flex flex-col items-center gap-4 flex-1 p-6 rounded cursor-pointer hover:bg-gray-50 duration-75"
+                  className="flex flex-col items-center gap-4 flex-1 p-6 rounded hover:bg-gray-50 duration-75"
                   onClick={() =>
                     setForm((prev) => ({ ...prev, role: "jobseeker" }))
                   }
@@ -69,7 +69,7 @@ const Register = () => {
                 </button>
                 <div className="w-px h-full bg-gray-300 mx-4" />
                 <button
-                  className="flex flex-col items-center gap-4 flex-1 p-6 rounded cursor-pointer hover:bg-gray-50 duration-75"
+                  className="flex flex-col items-center gap-4 flex-1 p-6 rounded hover:bg-gray-50 duration-75"
                   onClick={() =>
                     setForm((prev) => ({ ...prev, role: "company" }))
                   }
@@ -81,7 +81,7 @@ const Register = () => {
             ) : (
               <div className="w-full max-w-md mx-auto">
                 <div
-                  className="absolute top-3 left-2 flex items-center justify-center gap-1 cursor-pointer"
+                  className="absolute top-3 left-2 flex items-center gap-1 cursor-pointer"
                   onClick={() => setForm((prev) => ({ ...prev, role: null }))}
                 >
                   <ChevronLeft />

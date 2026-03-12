@@ -35,15 +35,15 @@ const Login = () => {
   };
 
   return (
-    <div className="h-dvh w-full bg-red-500 flex flex-col justify-center items-center gap-10">
-      <div className="w-full relative max-w-4xl mx-auto bg-white p-8 rounded shadow flex flex-col justify-center items-center gap-6">
+    <div className="flex h-dvh bg-red-500 flex-col justify-center items-center gap-10 w-full">
+      <div className="relative max-w-4xl mx-auto bg-white p-8 rounded shadow flex flex-col items-center gap-6 w-full">
         <div className="text-center">
           <h1>Login to an Account</h1>
           <p>Login to an account to apply for jobs or post a job.</p>
         </div>
         <form className="w-full flex" onSubmit={handleSubmit}>
           {token ? (
-            <Navigate to="/dashboard" />
+            <Navigate to="/jobs" />
           ) : (
             <>
               <div>
@@ -67,7 +67,7 @@ const Login = () => {
               {error && <p className="text-red-500">{error}</p>}
               <button
                 type="submit"
-                className="w-full bg-red-500 text-white py-2 rounded hover:bg-red-600 transition duration-200"
+                className="w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded transition"
               >
                 Login
               </button>

@@ -1,5 +1,5 @@
-import { createContext, useState } from "react";
-import { loginUser, registerUser } from "../api/authApi";
+import { createContext, useEffect, useState } from "react";
+import { loggedUser, loginUser, registerUser } from "../api/authApi";
 
 export const AuthContext = createContext();
 
@@ -35,6 +35,20 @@ export const AuthProvider = ({ children }) => {
     console.log(res);
     console.log(token);
   };
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const res = await loggedUser();
+        setCurrUser(res);
+      } catch (err) {
+        localStorage.removeItem("token");
+        setCurrUser(null);
+      }
+    };
+
+    fetchUser();
+  }, []);
 
   return (
     <AuthContext.Provider value={{ token, currUser, register, logout, login }}>

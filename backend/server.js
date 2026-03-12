@@ -3,16 +3,18 @@ import express from "express";
 import cors from "cors";
 import { connectDB } from "./src/config/db.js";
 
-import authRoutes from "./src/routes/auth.routes.js"; // Import auth route
+import authRoutes from "./src/routes/auth.routes.js";
+import jobRoutes from "./src/routes/job.routes.js";
 
 dotenv.config();
-console.log("Environment variables loaded:", process.env.PORT); // Debugging line to check if env variables are loaded
+console.log("Environment variables loaded:", process.env.PORT);
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
+app.use("/api/jobs", jobRoutes);
 
 await connectDB();
 

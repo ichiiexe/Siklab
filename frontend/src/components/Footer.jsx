@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white py-4 mt-8">
-      <div className="container mx-auto flex justify-center space-x-6 mb-4">
+      <div className="container flex justify-center space-x-6 mb-4">
         <div>
           <h2>For Job Seekers</h2>
           <ul>
@@ -79,7 +79,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="container mx-auto text-center">
+      <div className="container text-center">
         <p>
           &copy; {new Date().getFullYear()} FiloJobHunt. All rights reserved. 🇵🇭
         </p>
